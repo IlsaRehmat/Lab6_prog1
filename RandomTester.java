@@ -38,7 +38,11 @@ public class RandomTester
         return r.nextInt(6)+1;
     }
     
+    public int getRandomInRange(int min,int max){
+        return r.nextInt((max-min)+1)+min;
+    }
+    
     public int getRandom(int max){
-        return r.nextInt(max)+1;
+        return getRandomInRange(1,max);
     }
 }
