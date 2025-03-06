@@ -68,6 +68,12 @@
    * Found in java.security
    * More secure than Random for cryptographic applications
    * 
+   * Question 23
+   * -If you add more responses to the ArrayList, the random selection will still work properly because
+   * r.nextInt(responses.size()) always picks an index within the available range.
+   * -If you remove all responses,it will cause an error( because there's nothing to choose from). 
+   * You could prevent this by checking if the list is empty before calling r.nextInt().
+   * 
    * 
  */
 public class SupportSystem
