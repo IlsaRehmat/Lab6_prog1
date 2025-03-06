@@ -11,6 +11,65 @@
  * @author     Michael Kölling and David J. Barnes
  * @version    0.1 (2016.02.29)
  */
+
+/*
+ * Question 2
+ * Class declaration: Shows which package it belongs to
+ * Constructor summary: Lists available constructors
+ * Method summary: List methods with short descriptions
+ * Method details: detailed explanations of each method
+ * Inherited methods: Methods inherited from parent classes.
+ * Other classes start with the same structure.
+ * 
+ * Question 3
+ * There are two versions:
+ * 1. boolean startsWith(String prefix)
+ * checks if the string starts with the given prefix
+ * 2. boolean startsWith(String prefix, int toffset)
+ * Checks if the substring  starting from toffset starts with the given prefix
+ * 
+ * 
+ * Question 4
+ * The method is endsWith(String suffix)
+ * Return type: boolean
+ * 
+ * Question 5
+ * The method is length()
+ * It returns the number characters in a string
+ * 
+ * Question 6
+ * Found using JavaDocs
+ * Methods are easy to find if you know what to look for
+ * 
+ * Question 7
+ * Signature; public String trim()
+ * Removes leading and trailing spaces
+ /* 
+  /* 
+   * Question 10 
+   * Found in String documentation
+   * Return type:boolean
+   * Used to compare two strings
+   * 
+   * Question 12
+   * Found in java.util package
+   * Used for generating random numbers
+   * 
+   * Question 13
+   * Random rand = new Random();
+   * int randomNumber = rand.nextInt(100);
+   * System.out.println(randomNumber);
+   * 
+   * Question 15
+   * Generates a random number from o to 99
+   * if you need 1 to 100: rand.nextInt(100)+1
+   * 
+   * Question 21
+   * Found in java.security
+   * More secure than Random for cryptographic applications
+   * 
+   * 
+ */
 public class SupportSystem
 {
     private InputReader reader;
@@ -38,6 +97,8 @@ public class SupportSystem
 
         while(!finished) {
             String input = reader.getInput();
+            input = input.trim();
+            input = input.toLowerCase();
             if(input.equals("bye")) {
                 finished = true;
             }
