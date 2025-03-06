@@ -22,4 +22,9 @@ public class RandomTester
     public int throwDice(){
         return r.nextInt(6)+1;
     }
+    
+    public String getResponse(){
+        String[] responses = {"yes","no","maybe"};
+        return responses[r.nextInt(responses.length)];
+    }
 }
