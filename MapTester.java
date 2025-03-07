@@ -6,34 +6,58 @@
  * @version (a version number or a date)
  */
 /*
- * Question 1
+ * Question 24
  * Hash Map in Java is a part of the java.util package and is used to store key value pairs
  * A hashMap  uses a hash table to store the keys.
  * It provides a way to store and retrieve data using unique keys
  * 
- * Question 2
+ * Question 25
  * Methods
  * put, get, containsKey, containsValue, remove, entrySet, keySet, Values
  * 
- * Question 3
+ * Question 26
  * We can use the size() method.
  * 
- * Question 5
+ * Question 28
  * The existing value is replaced with the new value
  * 
- * Question 6
+ * Question 29
  * Both keys and their associated values are stored seperately
  * 
- * Question 7
+ * Question 30
  * we use a containsKey() method
  * Example
  * System.out.println(map.containsKey("ilsa"));
  * 
- * Question 8
+ * Question 31
  * The get() method returns null
  * 
- * Question 9
+ * Question 32
  * We use the keySet() method
+ * 
+ * Question 34
+ * Similarities:
+ * Both store elements and allow iteration
+ * Both can be modified dynamically
+ * Differences:
+ * HashSet doesnt allow duplicates, while ArrayLists does
+ * HashSet is unordered, while ArrayList maintains insertion order
+ * 
+ * Question 35
+ * It uses a regular expression to split a string
+ * Split by space or tab
+ * Split by colon(:)
+ * 
+ * Question 36
+ * HashSet: Removes duplicates, unordered
+ * ArrayList: Maintains order, allows duplicates
+ * 
+ * Question 37
+ * Extra spaces are treated as seperate elements unless handled properly
+ * 
+ * 
+ * 
+ * 
  * 
  */
 import java.util.HashMap;
