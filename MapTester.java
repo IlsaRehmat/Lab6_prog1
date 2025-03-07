@@ -48,12 +48,23 @@
  * Split by space or tab
  * Split by colon(:)
  * 
- * Question 36
+ * Question 37
  * HashSet: Removes duplicates, unordered
  * ArrayList: Maintains order, allows duplicates
  * 
- * Question 37
+ * Question 38
  * Extra spaces are treated as seperate elements unless handled properly
+ * 
+ * Question 40
+ * examples of other methods that the Array class provides
+ * sort()
+ * binarySearch()
+ * copyOf()
+ * equals()
+ * fill()
+ * toString()
+ * asList()
+ * 
  * 
  * 
  * 
