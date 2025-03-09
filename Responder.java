@@ -15,7 +15,7 @@ public class Responder
     private ArrayList<String> defaultResponses;
     private Random r;
     private HashMap<String,String> responsesMap;
-    
+    private String lastResponse = "";
        /**
      * Constructor: Initializes th list and fills it with responses
      */
@@ -64,7 +64,13 @@ public class Responder
     }
     
     public String pickDefaultResponse(){
-        int index = r.nextInt(defaultResponses.size());
-        return defaultResponses.get(index);
+        String response;
+        do{
+            int index = r.nextInt(defaultResponses.size());
+            response = defaultResponses.get(index);
+        } while (response.equals(lastResponse));
+        
+        lastResponse = response;
+        return response;
     }
 }
