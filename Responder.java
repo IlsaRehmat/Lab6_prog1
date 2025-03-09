@@ -33,6 +33,10 @@ public class Responder
         responsesMap.put("frozen", "no way other than reboot");
         responsesMap.put("crash", "Your system crashed. Try reinstalling.");
         responsesMap.put("network", "Check your router and network settings.");
+        responsesMap.put("bug","Try reinstalling the software.");
+        responsesMap.put("update","Make sure you have the latest update installed.");
+        responsesMap.put("password","Try resetting your password.");
+        responsesMap.put("wifi","Check if your Wi-FI router is working properly.");
     }
     
     /**
