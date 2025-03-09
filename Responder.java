@@ -3,6 +3,7 @@ import java.util.Random;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Arrays;
 /**
  * The responder class represents a response generator object.
  * It is used to generate an automatic response to an input string.
@@ -54,11 +55,17 @@ public class Responder
      * Selects and returns a random response
      */
     public String generateResponse(HashSet<String> words){
+        ArrayList<String> matchedResponses = new ArrayList<>();
+        
         for (String word : words){
             String response = responsesMap.get(word);
             if (response != null){
-                return response;
+                matchedResponses.add(response);
             }
+        }
+        
+        if (!matchedResponses.isEmpty()){
+            return String.join("", matchedResponses);
         }
         return pickDefaultResponse();
     }
