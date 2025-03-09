@@ -1,3 +1,4 @@
+import java.util.HashMap;
 
 /**
  * Write a description of class MapTester here.
@@ -71,7 +72,6 @@
  * 
  * 
  */
-import java.util.HashMap;
 public class MapTester
 {
     private HashMap<String,String> phoneBook = new HashMap<>();

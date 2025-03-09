@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.HashMap;
 
 /**
  * The responder class represents a response generator object.
@@ -12,14 +13,22 @@ public class Responder
 {
     private ArrayList<String> responses;
     private Random r;
+    private HashMap<String,String> responsesMap;
     
-    /**
+       /**
      * Constructor: Initializes th list and fills it with responses
      */
     public Responder(){
         responses = new ArrayList<>();
         r = new Random();
-        fillResponses();
+        responsesMap = new HashMap<>();
+        fillResponsesMap();
+    }
+    
+    private void fillResponsesMap(){
+        responsesMap.put("slow", "Try restaring your computer");
+        responsesMap.put("error", "Check for software update");
+        responsesMap.put("frozen", "no way other than reboot");
     }
     
     /**
@@ -36,7 +45,20 @@ public class Responder
     /**
      * Selects and returns a random response
      */
-    public String generateResponse(){
-        return responses.get(r.nextInt(responses.size()));
+    public String generateResponseOld(){
+        int choice = r.nextInt(responses.size());
+        return responses.get(choice);
+    }
+    
+    public String generateResponse(String word){
+        String answer = responsesMap.get(word);
+      if (answer==null){
+            pickDefaultResponse();
+        }
+        return answer;
+    }
+    
+    public String pickDefaultResponse(){
+        return "default";
     }
 }
