@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.HashMap;
-
+import java.util.HashSet;
+import java.util.Iterator;
 /**
  * The responder class represents a response generator object.
  * It is used to generate an automatic response to an input string.
@@ -11,7 +12,7 @@ import java.util.HashMap;
  */
 public class Responder
 {
-    private ArrayList<String> responses;
+    private ArrayList<String> defaultResponses;
     private Random r;
     private HashMap<String,String> responsesMap;
     
@@ -19,46 +20,47 @@ public class Responder
      * Constructor: Initializes th list and fills it with responses
      */
     public Responder(){
-        responses = new ArrayList<>();
+        defaultResponses = new ArrayList<>();
         r = new Random();
         responsesMap = new HashMap<>();
         fillResponsesMap();
+        fillDefaultResponses();
     }
     
     private void fillResponsesMap(){
-        responsesMap.put("slow", "Try restaring your computer");
+        responsesMap.put("slow", "Try restarting your computer");
         responsesMap.put("error", "Check for software update");
         responsesMap.put("frozen", "no way other than reboot");
+        responsesMap.put("crash", "Your system crashed. Try reinstalling.");
+        responsesMap.put("network", "Check your router and network settings.");
     }
     
     /**
      * Populates the responses list
      */
-    private void fillResponses(){
-        responses.add("Have you trid restarting your computer?");
-        responses.add("Please check if your software is up to date.");
-        responses.add("Try reopening the application");
-        responses.add("Make sure the internet connection is stable");
-        responses.add("I need more details to help with this problem");
+    private void fillDefaultResponses(){
+        defaultResponses.add("Have you trid restarting your computer?");
+        defaultResponses.add("Please check if your software is up to date.");
+        defaultResponses.add("Try reopening the application");
+        defaultResponses.add("Make sure the internet connection is stable");
+        defaultResponses.add("I need more details to help with this problem");
     }
     
     /**
      * Selects and returns a random response
      */
-    public String generateResponseOld(){
-        int choice = r.nextInt(responses.size());
-        return responses.get(choice);
-    }
-    
-    public String generateResponse(String word){
-        String answer = responsesMap.get(word);
-      if (answer==null){
-            pickDefaultResponse();
+    public String generateResponse(HashSet<String> words){
+        for (String word : words){
+            String response = responsesMap.get(word);
+            if (response != null){
+                return response;
+            }
         }
-        return answer;
+        return pickDefaultResponse();
     }
     
     public String pickDefaultResponse(){
-        return "default";
+        int index = r.nextInt(defaultResponses.size());
+        return defaultResponses.get(index);
     }
 }
