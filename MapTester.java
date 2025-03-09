@@ -66,6 +66,15 @@ import java.util.HashMap;
  * toString()
  * asList()
  * 
+ * Question 39
+ * The getInput() method reads user input, converts it to lowercase
+ * splits it into words and stpres them in HashSet<String>.
+ * A shorter approach is new HashSet<>(Arrays.asList(wordArray)).
+ * Class variables and methods (static) belong to the class, not instances. 
+ * The Arrays class offers methods like sort(),binarySearch(),asList() and equals().
+ * 
+ * 
+ * 
  * 
  * 
  * 
